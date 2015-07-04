@@ -1,10 +1,11 @@
 % This code implements convolutional tensor decomposition
 % copyright Furong Huang, furongh@uci.edu
 % Cite paper arXiv:1506.03509 
-clear;clc;
+% This function estimates the filters based on conf.sample. 
 
+clear;clc;
 L = 1;
-load(['data/syntheticData_L',num2str(L),'.mat']);
+load(['../data/syntheticData_L',num2str(L),'.mat']);
 conf.maxIter = 100;
 conf.minIter = 1;
 conf.tol = 1e-4;
@@ -82,4 +83,7 @@ for deflat_id = 1 : conf.L
     fc_new(:,deflat_id) = fc_new_i;
     lambda_new((deflat_id-1)*conf.n+1:deflat_id*conf.n) = lambda_new_i;
 end
-runningtime = toc;
+estimate.f = fa_new;
+estimate.lambda = lambda_new;
+estimate.runningtime = toc;
+save(['../data/syntheticData_L',num2str(L),'_estimate.mat'],'conf','estimate');
