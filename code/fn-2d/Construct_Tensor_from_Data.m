@@ -1,4 +1,4 @@
-function Tensor = Construct_Tensor_from_Data(sample,N)
+ function Tensor = Construct_Tensor_from_Data(sample,N)
 % convert sample into per column per sample format
 if size(sample,2) ~= N
     sample = sample';

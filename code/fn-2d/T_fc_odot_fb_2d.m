@@ -6,7 +6,7 @@ function Result = T_fc_odot_fb_2d(T, fc, fb, n)
 assert(size(fc,1)==size(fb,1));
 assert(size(fc,2)==size(fb,2));
 a = size(fc,1);
-L = size(fc,2);
+L = size(fc,3);
 Result = zeros(n*n,n*n*L);
 for i = 1 : L
     this_fc = zeros(n,n); this_fc(1:a,1:a)=fc(:,:,i);
