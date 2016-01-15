@@ -12,6 +12,6 @@ conf.tol = 1e-4;
 conf.IniTrue = 0;
 addpath('fn-2d/');
 Tensor = Construct_Tensor_from_Data(conf.sample, conf.N);
-ALS_2d(conf, Tensor)
+estimate = ALS_2d(conf, Tensor);
 
 save(['../data/syntheticData_2d_L',num2str(L),'_estimate.mat'],'conf','estimate');

@@ -46,9 +46,9 @@ for deflat_id = 1 : conf.L
         lambda_old_i = lambda_new_i;
     end
     TensorResidual = TensorResidual - thisTensor;
-    fa_new(:,deflat_id) = fa_new_i;
-    fb_new(:,deflat_id) = fb_new_i;
-    fc_new(:,deflat_id) = fc_new_i;
+    fa_new(:,:,deflat_id) = fa_new_i;
+    fb_new(:,:,deflat_id) = fb_new_i;
+    fc_new(:,:,deflat_id) = fc_new_i;
     lambda_new((deflat_id-1)*conf.n*conf.n+1:deflat_id*conf.n*conf.n) = lambda_new_i;
 end
 estimate.f = fa_new;
