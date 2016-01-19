@@ -5,7 +5,7 @@ if size(sample,2) ~= N
 end
 M1 = mean(sample,2);
 M2 = sample*sample'.*(1/N);
-M3 = sample * matrix_katri_rao(sample,sample)'.*(1/N);
+M3 = mutip_matrix_katri_rao(sample);% sample * matrix_katri_rao(sample,sample)'.*(1/N);
 
 M2_otimes_M1 = zeros(size(sample,1),size(sample,1)^2);
 for i = 1: size(sample,1)
