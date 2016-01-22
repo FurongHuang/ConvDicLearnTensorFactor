@@ -18,7 +18,7 @@ else
     fa_old = [conf.f];
     fb_old = [conf.f];
     fc_old = [conf.f];
-    lambda_old = ones(conf.n*conf.n*conf.L,1)*conf.lambda;
+    lambda_old = conf.lambda*ones(conf.n*conf.n*conf.L,1);
     lambda_new = lambda_old;
 end
 
