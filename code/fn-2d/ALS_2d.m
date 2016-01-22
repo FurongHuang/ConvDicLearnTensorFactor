@@ -11,14 +11,17 @@ if conf.IniTrue ==0
         fb_old(1:conf.a,1:conf.a,ind_L) = orth(randn(conf.a,conf.a));
         fc_old(1:conf.a,1:conf.a,ind_L) = orth(randn(conf.a,conf.a));
     end
+    lambda_old = ones(conf.n*conf.n*conf.L,1);
+    lambda_new = lambda_old;
 else
     %% True Initialization
     fa_old = [conf.f];
     fb_old = [conf.f];
     fc_old = [conf.f];
+    lambda_old = ones(conf.n*conf.n*conf.L,1)*conf.lambda;
+    lambda_new = lambda_old;
 end
-lambda_old = ones(conf.n*conf.n*conf.L,1);
-lambda_new = lambda_old;
+
 TensorResidual = Tensor;
 %% Iterative Steps
 for deflat_id = 1 : conf.L
