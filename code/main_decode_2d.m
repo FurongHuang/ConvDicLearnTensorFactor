@@ -7,7 +7,7 @@ clear;clc;
 addpath('fn/')
 L = 1;
 load(['../data/syntheticData_2d_L',num2str(L),'_estimate.mat']);
-estimate.H = zeros(size(conf.sample,2),conf.n*conf.n);
+estimate.H = zeros(size(conf.sample,2),conf.n*conf.n*conf.L);
 for id_sample = 1 : size(conf.sample,2)
     fprintf('id_sample:%d\n',id_sample);
     filters = estimate.f;
